@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة حلقة أُبيّ بن كعب رضي الله عنه</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Amiri:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+        .quran-font { font-family: 'Amiri', serif; }
+        .tab-btn.active { background-color: #065f46; color: white; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header & Navigation -->
+    <header class="bg-emerald-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <i class="fa-solid fa-book-quran text-3xl text-amber-400"></i>
+                <div>
+                    <h1 class="text-lg font-bold quran-font">حلقة أُبيّ بن كعب رضي الله عنه</h1>
+                    <p class="text-xs text-emerald-200">نظام إدارة وتحفيظ القرآن الكريم</p>
+                </div>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <nav class="flex flex-wrap gap-1 text-sm font-semibold">
+                <button onclick="switchTab('dashboard')" id="btn-dashboard" class="tab-btn active px-3 py-1.5 rounded-lg hover:bg-emerald-700 transition">
+                    <i class="fa-solid fa-chart-pie ml-1"></i> الرئيسية
+                </button>
+                <button onclick="switchTab('students')" id="btn-students" class="tab-btn px-3 py-1.5 rounded-lg hover:bg-emerald-700 transition">
+                    <i class="fa-solid fa-users ml-1"></i> الطلاب
+                </button>
+                <button onclick="switchTab('attendance')" id="btn-attendance" class="tab-btn px-3 py-1.5 rounded-lg hover:bg-emerald-700 transition">
+                    <i class="fa-solid fa-clipboard-user ml-1"></i> الحضور
+                </button>
+                <button onclick="switchTab('recitation')" id="btn-recitation" class="tab-btn px-3 py-1.5 rounded-lg hover:bg-emerald-700 transition">
+                    <i class="fa-solid fa-book-open ml-1"></i> الحفظ والمراجعة
+                </button>
+                <button onclick="switchTab('talqeen')" id="btn-talqeen" class="tab-btn px-3 py-1.5 rounded-lg hover:bg-emerald-700 transition">
+                    <i class="fa-solid fa-headphones ml-1"></i> التلقين والتكرار
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-6 flex-grow">
+
+        <!-- 1. الرئيسية / الإحصاءات -->
+        <section id="tab-dashboard" class="space-y-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex justify-between items-center">
+                    <div>
+                        <p class="text-xs text-slate-500 font-bold">إجمالي الطلاب</p>
+                        <p id="stat-students" class="text-2xl font-bold text-emerald-800">0</p>
+                    </div>
+                    <i class="
